@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include("../partials/head.ejs") %> 
+  <body>
+    <h1>Welcome to the most </h1>
+    <p>this is the rendered page</p>
+    <nav>
+      
+        <a href="/">home page</a>
+        <a href="/about">about</a>
+        <a href="/blogs/create">New blog</a>
+    </nav>
+    <% blogs.forEach(blog => { %>
+        <a class="single" href="/blogs/<%= blog._id %> ">
+          <p class="snippet"><%= blog.snippet%></p>
+          <p><%= blog.body%></p>
+        </a>
+        
+        
+    <% }); %>
+
+      <%- include("../partials/footer.ejs") %>
+      
+  </body>
+</html>
